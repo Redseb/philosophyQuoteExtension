@@ -1,0 +1,19 @@
+body {
+    min-height: 100vh;
+}
+
+img {
+    min-height: 100vh;
+    max-height: 100vh;
+    border: 5px solid black;
+}
+
+#quote {
+    position: absolute;
+    top: 50vh;
+}
+
+#clock {
+    position: absolute;
+    right: 50px;
+}
