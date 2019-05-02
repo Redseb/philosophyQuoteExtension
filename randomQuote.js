@@ -1,6 +1,8 @@
 var image = document.getElementById("image");
 var quote = document.getElementById("quote");
 var clock = document.getElementById("clock");
+clock.addEventListener("click", toggleDarkMode, false);
+var background = document.getElementById("background"); //Used for darkMode toggling
 
 /* 
     List of quotes as a two dimensional array. 
@@ -29,9 +31,20 @@ var quoteList =
     ];
 
 var randomNumber = Math.floor((Math.random() * quoteList.length)); //Pick a random number between 0 and length of quote list
-
 quote.innerHTML = quoteList[randomNumber][0]; //Set quote text to corresponding quote
 image.src = "images/" + quoteList[randomNumber][1]; //Set image source to corresponding image
+
+var darkMode = false; //Controls whether or not new tab is in dark mode
+function toggleDarkMode(){
+    darkMode = !darkMode;
+    if(darkMode){
+        background.classList.remove("bg-gray");
+        background.classList.add("bg-dark");
+    } else {
+        background.classList.remove("bg-dark");
+        background.classList.add("bg-gray");
+    }
+}
 
 // Clock Calculations
 // Update the count down every 1 second
